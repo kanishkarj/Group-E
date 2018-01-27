@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "the web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishangoel9853/Group-E.git"
+  },
+  "keywords": [
+    "Express",
+    "JS"
+  ],
+  "author": "Group E",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishangoel9853/Group-E/issues"
+  },
+  "homepage": "https://github.com/ishangoel9853/Group-E#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
