@@ -1,2 +1,0 @@
-
-exports.Models = global.Models;
