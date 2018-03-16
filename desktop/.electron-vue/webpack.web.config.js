@@ -15,6 +15,10 @@ let webConfig = {
   entry: {
     web: path.join(__dirname, '../src/renderer/main.js')
   },
+  node: {
+    fs: 'empty',
+    child_process: 'empty',
+  },
   module: {
     rules: [
       {

@@ -1,8 +1,8 @@
 Arguments: 
-  /home/sentinel/.nvm/versions/node/v8.10.0/bin/node /home/sentinel/.nvm/versions/node/v8.10.0/bin/yarn start
+  /home/sentinel/.nvm/versions/node/v8.10.0/bin/node /home/sentinel/.nvm/versions/node/v8.10.0/bin/yarn run watch
 
 PATH: 
-  /root/.gem/ruby/2.5.0/bin:/home/sentinel/.nvm/versions/node/v8.10.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+  /home/sentinel/.nvm/versions/node/v8.10.0/bin:/root/.gem/ruby/2.5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 Yarn version: 
   1.5.1
@@ -35,7 +35,8 @@ npm manifest:
       "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
       "test": "npm run unit && npm run e2e",
       "unit": "karma start test/unit/karma.conf.js",
-      "postinstall": "npm run lint:fix"
+      "postinstall": "npm run lint:fix",
+      "watch": "cross-env BUILD_TARGET=web node .electron-vue/dev-runner.js"
     },
     "build": {
       "productName": "desktop",
@@ -72,12 +73,13 @@ npm manifest:
       }
     },
     "dependencies": {
-      "vue": "^2.4.2",
       "axios": "^0.16.1",
+      "marked": "^0.3.17",
+      "vue": "^2.4.2",
       "vue-electron": "^1.0.6",
       "vue-router": "^2.5.3",
-      "vuex": "^2.3.1",
-      "vuetify": "1.0.0"
+      "vuetify": "1.0.0",
+      "vuex": "^2.3.1"
     },
     "devDependencies": {
       "babel-core": "^6.25.0",
@@ -8838,14 +8840,17 @@ Lockfile:
       readable-stream "^2.0.0"
 
 Trace: 
-  Error: Command "start" not found.
-      at new MessageError (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:186:110)
-      at /home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:87307:17
-      at Generator.next (<anonymous>)
-      at step (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:98:30)
-      at /home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:116:14
-      at new Promise (<anonymous>)
-      at new F (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:23451:28)
-      at /home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:95:12
-      at runCommand (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:87312:22)
-      at Object.<anonymous> (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:87412:14)
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c cross-env BUILD_TARGET=web node .electron-vue/dev-runner.js
+  Directory: /home/sentinel/work/parasmani-desktop
+  Output:
+  
+      at ProcessTermError.MessageError (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/home/sentinel/.nvm/versions/node/v8.10.0/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

@@ -7,17 +7,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'welcome-view',
-      component: require('@/components/WelcomeView').default
+      name: 'SignIn-view',
+      component: require('@/components/SignIn').default
     },
     {
-      path: '/inspire',
-      name: 'inspire',
-      component: require('@/components/InspireView').default
-    },
-    {
-      path: '*',
-      redirect: '/'
+      path: '/home',
+      component: require('@/components/exam/parent').default,
+      children: [
+        {
+          path: '/',
+          component: require('@/components/exam/instructions').default
+        },
+        {
+          path: '/start',
+          component: require('@/components/exam/home').default
+        }
+      ]
     }
   ]
 })
